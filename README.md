@@ -9,9 +9,9 @@ After submitting the form, user can fetch the data in the form using username to
 After retrieval, if the user edits any field and submit, then the already existing entries in the database are updated. Finally a message that the form has been updated is shown.
 
 
-**Technology used in Project**
+**Technologies used in Project**
 
-HTML | CSS | JavaScript | Java Servlet | AJAX | SQL Server
+HTML | CSS | JavaScript | Java Servlet | AJAX | SQL Server | Tomcat Server 9.0 | Java IDE (Eclipse)
 
 
 **Modules in project**
@@ -20,7 +20,7 @@ HTML | CSS | JavaScript | Java Servlet | AJAX | SQL Server
 
 
 
-To connect Servlet with SQL Server change the following name in both RegistrationDao file and UpdationDao file :
+**To connect Servlet with SQL Server change the following name in both RegistrationDao file and UpdationDao file :**
 1. SQL server name
 2. Database Name
 3. Username for SQL authentication
