@@ -1,5 +1,11 @@
 # Football-Form-java
 
+**Modules in project**
+
+![12](https://user-images.githubusercontent.com/55653586/154213922-ce41fbe4-91f8-4ce9-81c8-cde8b1128cb2.PNG)
+
+
+
 To connect Servlet with SQL Server change the following name in both RegistrationDao file and UpdationDao file :
 1. SQL server name
 2. Database Name
