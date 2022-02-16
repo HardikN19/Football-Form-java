@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//import Dao.ValidateDao;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+//This servlet will fetch the data from SQL Server where stored username is same as username given by the user.
 @WebServlet("/FetchDataServlet")
 public class FetchDataServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,7 +30,7 @@ public class FetchDataServlet extends HttpServlet {
 	
 	}
 	
-	//To fetch data from DB where username is same.
+	//doGet method to the fetch data from DB where stored username match with given username
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	    String username=request.getParameter("username");  
@@ -38,7 +38,7 @@ public class FetchDataServlet extends HttpServlet {
 	    
 	    try {
 	    	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); 
-			Connection con=DriverManager.getConnection("jdbc:sqlserver://INDIA-44P0HC2;databaseName=FootballForm", "sa", "hanathgr");  
+			Connection con=DriverManager.getConnection("jdbc:sqlserver://INDIA-44P0HC2;databaseName=FootballForm", "<username>", "<password>");  
 			PreparedStatement ps = con.prepareStatement("select * from register where username=?");  
 			ps.setString(1,username);  
 			ResultSet rs=ps.executeQuery();
