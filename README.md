@@ -20,7 +20,7 @@ HTML | CSS | JavaScript | Java Servlet | AJAX | SQL Server | Tomcat Server 9.0 |
 
 
 
-**To connect Servlet with SQL Server change the following name in both RegistrationDao file and UpdationDao file :**
+**To connect Servlet with SQL Server change the following name in both Dao files and FetchDataServlet file :**
 1. SQL server name
 2. Database Name
 3. Username for SQL authentication
