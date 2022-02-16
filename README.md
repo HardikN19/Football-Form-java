@@ -1,5 +1,14 @@
 # Football-Form-java
 
+**About the project**
+
+This is a Football Registration Form in which the user will be able to entervarious details to register for a Football Tournament.
+
+The user will be required to input various details such as "First name", "Email", "desired position" to submit the form.
+After submitting the form, a message will show up that the form has been submitted and then user can fetch the data in the form using username to edit the fields.
+After retrieval, if the user edits any field and submit, then the already existing entries in the database are updated. Finally a message that the form has been updated is shown.
+
+
 **Modules in project**
 
 ![12](https://user-images.githubusercontent.com/55653586/154213922-ce41fbe4-91f8-4ce9-81c8-cde8b1128cb2.PNG)
