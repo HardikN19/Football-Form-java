@@ -5,8 +5,13 @@
 This is a Football Registration Form in which the user will be able to entervarious details to register for a Football Tournament.
 
 The user will be required to input various details such as "First name", "Email", "desired position" to submit the form.
-After submitting the form, a message will show up that the form has been submitted and then user can fetch the data in the form using username to edit the fields.
+After submitting the form, user can fetch the data in the form using username to edit the fields.
 After retrieval, if the user edits any field and submit, then the already existing entries in the database are updated. Finally a message that the form has been updated is shown.
+
+
+**Technology used in Project**
+
+HTML | CSS | JavaScript | Java Servlet | AJAX | SQL Server
 
 
 **Modules in project**
