@@ -16,7 +16,7 @@ public class UpdationDao {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 
         try (Connection connection = DriverManager
-            .getConnection("jdbc:sqlserver://INDIA-44P0HC2;databaseName=FootballForm", "<name>", "<password>");
+            .getConnection("jdbc:sqlserver://INDIA-44P0HC2;databaseName=FootballForm", "sa", "hanathgr");
 
         	
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
