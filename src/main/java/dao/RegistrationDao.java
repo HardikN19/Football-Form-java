@@ -24,7 +24,7 @@ public class RegistrationDao {
 	        
 	        //To check duplicate username and contact number
 	        try (Connection connection = DriverManager
-	            .getConnection("jdbc:sqlserver://INDIA-44P0HC2;databaseName=FootballForm", "sa", "hanathgr");
+	            .getConnection("jdbc:sqlserver://INDIA-44P0HC2;databaseName=FootballForm", "<name>", "<password>");
 
 	            PreparedStatement ps = connection.prepareStatement(VALIDATE)) {
 	        	ps.setString(1,register.getUsername());  
