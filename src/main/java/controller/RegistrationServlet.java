@@ -36,7 +36,7 @@ public class RegistrationServlet extends HttpServlet {
 		    
 		    try {
 		    	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); 
-				Connection con=DriverManager.getConnection("jdbc:sqlserver://INDIA-44P0HC2;databaseName=FootballForm", "sa", "hanathgr");  
+				Connection con=DriverManager.getConnection("jdbc:sqlserver://INDIA-44P0HC2;databaseName=FootballForm", "<name>", "<password>");  
 				PreparedStatement ps = con.prepareStatement("select * from register where username=?");  
 				ps.setString(1,username);  
 				ResultSet rs=ps.executeQuery();
