@@ -1,0 +1,173 @@
+<!-- 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<title>Register Page</title>
+</head>
+<body>
+
+<div class="container">
+        <div class="form-header">
+            <h2 class="form-heading">
+                Football Registration Form
+            </h2>
+
+            <form action="register" method="POST" target="_self" id="form" class="form-box" autocomplete="off">
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="userName" class="form-label">USER NAME</label>
+                        <sup class="warning">*</sup>
+                        <button type="button" id="btn-fetch" value="fetch" onclick="callAjax();">Fetch</button>
+                        <input type="text" name="username" id="userName" class="input-col" placeholder="Enter username..">
+                        <span class="errorMessage warning"> </span>
+                    </div>
+                    <div class="form-column">
+                        <label for="firstName" class="form-label">FIRST NAME</label>
+                        <sup class="warning">* </sup>
+                        <input type="text" name="firstName" id="firstName" class="input-col" placeholder="What is your name?">
+                        <span class="errorMessage warning"> </span>
+                    </div>
+                    <div class="form-column">
+                        <label for="lastName" class="form-label">LAST NAME</label>
+                        <input type="text" name="lastName" id="lastName" class="input-col" placeholder="What is your last name?">
+                        <span class="errorMessage warning"> </span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="number" class="form-label">PHONE NUMBER</label>
+                        <sup class="warning">*</sup>
+                        <br>
+                        <div class="form-row">
+                            <select name="code" id="code">
+                            <option value="+1">+1</option>
+                            <option value="+2">+2</option>
+                            <option selected value="+91">+91</option>
+                            <option value="+92">+92</option>
+                            </select>
+                            <input type="number" name="contact" id="phoneNumber" placeholder="What is the best # to reach you?"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                            maxlength = "10">
+                            <span class="errorMessage warning"> </span>
+                        </div>     
+                    </div>
+                    <div class="form-column">
+                        <label for="email" class="form-label">EMAIL</label> 
+                        <label class="switch">
+                            <input id="slide" type="checkbox" checked>
+                            <span class="slider round"></span>
+                          </label>
+                        <br>
+                        <input type="email" name="email" id="email" class="input-col" placeholder="What is your e-mail address?">
+                    </div>
+                    <div class="form-column">
+                        <label for="age" class="form-label">AGE GROUP</label>
+                        <sup class="warning">*</sup>
+                        <br>
+                        <select name="age" id="age" class="input-col">
+                            <option value="">Select age group</option>
+                            <option value="12-18 years">12-18 years</option>
+                            <option value="18-24 years">18-24 years</option>
+                            <option value="24-30 years">24-30 years</option>
+                          </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-column">
+                        <label for="team" class="form-label">DESIRED TEAM</label>
+                        <sup class="warning">*</sup>
+                        <br><br>
+                        <div class="form-option">
+                            <input type="radio" class="team" name="team" value="chelsea">
+                            <label for="chelsea">CHELSEA</label>
+                        </div><br>
+                        <div class="form-option">
+                            <input type="radio" class="team" name="team" value="manchester">
+                            <label for="manchester">MANCHESTER UNITED</label>
+                        </div><br>
+                        <div class="form-option">
+                            <input type="radio" class="team" name="team" value="liverpool">
+                            <label for="liverpool">LIVERPOOL</label>
+                        </div><br>
+                        <div class="form-option">
+                            <input type="radio" class="team" name="team" value="barcelona">
+                            <label for="barcelona">BARCELONA</label>
+                        </div>
+                        
+                    </div>
+                    <div class="form-column"> 
+                        <label for="position" class="form-label">DESIRED POSITION</label>
+                        <sup class="warning">*</sup>
+                        <span class="errorMessage warning"> </span>
+                        <br><br>
+                        <div class="form-option">
+                            <input type="checkbox" class="position" name="position" value="goalKeeper">
+                            <label for="position1" class="form-option"> GOAL KEEPER</label>
+                        </div><br>
+                        <div class="form-option">
+                            <input type="checkbox" class="position" name="position" value="offensive">
+                            <label for="position2" class="form-option"> OFFENSIVE</label>
+                        </div><br>
+                        <div class="form-option">
+                            <input type="checkbox" class="position" name="position" value="defence">
+                            <label for="position3" class="form-option"> DEFENCE</label>
+                        </div><br>
+                        <div class="form-option">
+                            <input type="checkbox" class="position" name="position" value="receiver">
+                            <label for="position4" class="form-option"> RECEIVER</label>
+                        </div>    
+                    </div>
+
+                    <div class="form-column">
+                        <label for="address" class="form-label">ADDRESS</label> <br>
+                        <textarea rows="6" cols="20" class="input-col address" name="address"></textarea>
+                    </div>
+                    <div class="form-column">
+                        <label for="pinCode" class="form-label">PIN CODE</label>
+                        <input type="number" name="pincode" id="pinCode" class="input-col" placeholder="Enter your Pin code"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        maxlength = "6">
+                        <span class="errorMessage warning"> </span> <br>
+                    </div>
+                </div>
+                <div class="form-row countryColumn">
+                    <div id="country-field">
+                        <label for="country" class="form-label">COUNTRY</label>
+                        <sup class="warning">*</sup>
+                        <br>
+                        <select name="country" id="countySelect" size="1" class="input-col">
+                        <option value="" selected="selected">Select the country</option>
+                        </select><br>
+                        
+                        <label for="state" class="form-label">STATE</label>                        
+                        <sup class="warning">*</sup>
+                        <br>
+                        <select name="state" id="stateSelect" size="1" class="input-col">
+                        <option value="" selected="selected">Select the state</option>
+                        </select><br>
+                        
+                        <label for="district" class="form-label">DISTRICT</label>
+                        <sup class="warning">*</sup>
+                        <br>
+                        <select name="city" id="districtSelect" size="1" class="input-col">
+                        <option value="" selected="selected">Select the city</option>
+                        </select><br>
+                    </div>
+                </div>
+                <button type="submit" id="btn-submit">Phewww! Let's submit it</button>
+                <br>
+            </form>
+            
+            <hr>
+        </div>
+        
+    </div>
+    <script src="app.js"></script>
+
+</body>
+</html>
