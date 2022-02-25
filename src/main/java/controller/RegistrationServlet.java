@@ -148,12 +148,12 @@ public class RegistrationServlet extends HttpServlet {
 	    //It will read the json file sended by update button.
 	    @Override
 		protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    	String body = inputStreamToString(request.getInputStream());
-	    	System.out.println("body: " + body);
+	    	String text = inputStreamToString(request.getInputStream());
+	    	System.out.println("text: " + text);
 	    	GsonBuilder builder = new GsonBuilder();
 	    	builder.setPrettyPrinting();
 	    	Gson gson = builder.create();
-	    	Registration register = gson.fromJson(body, Registration.class);
+	    	Registration register = gson.fromJson(text, Registration.class);
 	    	System.out.println(register);
 	    	System.out.println(register.getAddress());
 	    	try {
