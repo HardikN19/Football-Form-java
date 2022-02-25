@@ -11,14 +11,17 @@ import model.Registration;
 
 public class RegistrationDao {
 	 
+	//To register data into database.
 	public int registerDetails(Registration register) throws ClassNotFoundException {
 		 	boolean status=false;  
-		 	
-		 	String INSERT_USERS_SQL = "INSERT INTO register" +
+		 
+		//Query for insertion of new data into database.
+		 String INSERT_USERS_SQL = "INSERT INTO register" +
 	            "  (username, firstname, lastname, code, contact, email, age, team, position, address, pincode, country, state, city) VALUES " +
 	            " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 	        
-		 	String VALIDATE = "SELECT * FROM register WHERE username=? or contact=?";
+		//Query for validation of data where username and contact must be different.	
+		String VALIDATE = "SELECT * FROM register WHERE username=? or contact=?";
 	        int result = 0;
 
 	        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -91,8 +94,10 @@ public class RegistrationDao {
 	        }
 	    }
 	    
+	    //To update the details of already existing user based on username.
 	    public int updateDetails(Registration register) throws ClassNotFoundException {
-	    	String INSERT_USERS_SQL = "UPDATE register set firstname=?, lastname=?, code=?, contact=?, email=?, age=?, team=?, position=?, address=?, pincode=?, country=?, state=?, city=? WHERE username=? " ;
+	    	
+		   String INSERT_USERS_SQL = "UPDATE register set firstname=?, lastname=?, code=?, contact=?, email=?, age=?, team=?, position=?, address=?, pincode=?, country=?, state=?, city=? WHERE username=? " ;
 	        int result = 0;
 
 	        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -103,8 +108,8 @@ public class RegistrationDao {
 	        	
 	            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
 	        	
-	        	System.out.print("connected!");
-	        	preparedStatement.setString(1, register.getFirstName());
+	            System.out.print("connected!");
+	            preparedStatement.setString(1, register.getFirstName());
 	            preparedStatement.setString(2, register.getLastName());
 	            preparedStatement.setString(3, register.getCode());
 	            preparedStatement.setLong(4, register.getContact());
