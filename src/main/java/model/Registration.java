@@ -1,11 +1,12 @@
 package model;
 import java.io.Serializable;
 
+//Model to create getter and setter function.
 public class Registration implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
     
-	private String username;
+    private String username;
     private String firstName;
     private String lastName;
     private String code;
